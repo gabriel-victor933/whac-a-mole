@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whac-A-Mole</title>
+    <link rel="stylesheet" href="./reset.css">
+
+    <style>
+        body {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+
+        }
+
+        h1,
+        h2 {
+            font-size: 40px;
+            margin: 10px
+        }
+
+
+
+        main {
+            --tam: 360px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: center;
+            align-items: center;
+            width: var(--tam);
+            height: var(--tam);
+            position: fixed;
+            top: calc(50% - var(--tam)/2);
+            left: calc(50% - var(--tam)/2);
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: lightgray;
+            box-sizing: border-box;
+
+        }
+
+        .rato {
+            background-image: url(./rato.jpg);
+            background-size: contain;
+            animation: animacao 500ms;
+        }
+
+        .rato:hover {
+            border: solid 2px black;
+
+        }
+
+        @keyframes animacao {
+
+            0% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 0.8;
+            }
+
+            100% {
+                opacity: 0.2;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>score: <span id="score">0</span></h1>
+    <h2>time left: <span id="time">59</span></h2>
+
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
